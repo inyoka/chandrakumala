@@ -1,0 +1,24 @@
+{
+  "name": "chandrakumala",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inyoka/chandrakumala.git"
+  },
+  "author": "Mr Simon Holland BA Hons",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inyoka/chandrakumala/issues"
+  },
+  "homepage": "https://github.com/inyoka/chandrakumala#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "eslint": "^5.15.0",
+    "express": "^4.16.4"
+  }
+}
