@@ -6,9 +6,7 @@ require('dotenv').config();
 
 app.set("view engine", "ejs");
 
-app.get("/", function(req, res){
-    res.render("landing");
-});
+app.use("/", indexRoutes);
 
 // Use Environmental variables to determine PORT and IP to liston on...
 
