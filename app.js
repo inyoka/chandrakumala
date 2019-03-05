@@ -1,10 +1,12 @@
 var express = require("express");
 var app = express();
 
+app.set("view engine", "ejs");
+
 require('dotenv').config();
 
 app.get("/", function(req, res){
-    res.send("landing page");
+    res.render("landing page");
 });
 
 var listener = app.listen(process.env.PORT, process.env.IP, function(){
