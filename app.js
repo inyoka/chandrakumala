@@ -1,13 +1,16 @@
 var express = require("express");
 var app = express();
-
-app.set("view engine", "ejs");
+var indexRoutes = require("./routes/index");
 
 require('dotenv').config();
 
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res){
-    res.render("landing page");
+    res.render("landing");
 });
+
+// Use Environmental variables to determine PORT and IP to liston on...
 
 var listener = app.listen(process.env.PORT, process.env.IP, function(){
     var address = listener.address().address;
