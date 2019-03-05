@@ -1,3 +1,6 @@
+# CKS ignores
+*.swp
+
 # Logs
 logs
 *.log
