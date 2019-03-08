@@ -69,31 +69,24 @@ main{
     background-repeat: no-repeat;
     opacity: 0;
     /* z-index: 0; */
-    animation: imageAnimation 50s linear infinite;
+    animation: imageAnimation 40s linear infinite;
 }
 
-.slideshow li:nth-child(1) { 
-    background-image: url(../imgs/00335.jpg) 
+  .slideshow li:nth-child(1) { 
+    background-image: url(../imgs/coloring.png);
+    animation-delay: 0s; 
   }
   .slideshow li:nth-child(2) { 
-    background-image: url(../imgs/football.png);
+    background-image: url(../imgs/00578.jpg);
     animation-delay: 10s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(../imgs/coloring.png);
+    background-image: url(../imgs/00475.jpg);
     animation-delay: 20s; 
   }
   .slideshow li:nth-child(4) { 
-    background-image: url(../imgs/00578.jpg);
-    animation-delay: 30s; 
-  }
-  .slideshow li:nth-child(5) { 
-    background-image: url(../imgs/00475.jpg);
-    animation-delay: 40s; 
-  }
-  .slideshow li:nth-child(6) { 
     background-image: url(../imgs/00152.jpg);
-    animation-delay: 40s; 
+    animation-delay: 30s; 
   }
   
   @keyframes imageAnimation { 
