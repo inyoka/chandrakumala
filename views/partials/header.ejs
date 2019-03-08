@@ -7,13 +7,83 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/master.css">
 
     <title>School Web-Site</title>
   </head>
   <body class="d-flex vh-100 flex-column">
-        <header>
-            <h1 class="text-center">Heading </h1>
-        </header>
+        <header class=" pb-4">
+            <div class="container d-flex justify-content-center justify-content-sm-between align-items-start">
+                <div class="">
+                    <!-- <img class="mx-3 d-none" src="imgs/mala-white.svg" width="90px" alt="Logo Image"> -->
+                    <img class="mx-3 d-none d-sm-block d-lg-none" src="imgs/mala-white.svg" width="90px" alt="Logo Image">
+                    <img class="mx-3 d-none d-lg-block" src="imgs/mala-white.svg" width="120px" alt="Logo Image">
+                </div>
+            
+            
+                <div class="d-flex flex-column align-items-end">
+                  <nav class="d-none d-sm-block navbar navbar-expand-lg navbar-dark bg-transparent p-0 zindex">
+                    <img class="d-sm-none px-1" src="imgs/mala-white.svg" width="40px" alt="Logo Image">
+                    <a class="navbar-brand d-none d-md-block notranslate basker" href="/">Chandra Kumala School</a>
+                    <a class="navbar-brand d-block d-md-none basker notranslate" href="/">Chandra Kumala</a>
+                  </nav>
+            
+                  <div class="container d-flex justify-content-md-end">
+                    <a class="btn btn-primary btn-sm my-1 mx-1 mx-md-2" href="https://www.facebook.com/ChandraKumalaSchool/" target="_blank"><i class="fab fa-facebook-square fa-inverse fa-fw fa-2x"></i></a>
+                    <a class="btn btn-danger btn-sm my-1 mx-1 mx-md-2" href="https://www.youtube.com/chandrakumalaschool" target="_blank"><i class="fab fa-youtube fa-inverse fa-fw fa-2x"></i></a>
+                    <a class="btn btn-warning btn-sm my-1 mx-1 mx-md-2" href="https://www.instagram.com/chandrakumalaofficial/" target="_blank"><i class="fab fa-instagram fa-inverse fa-fw fa-2x"></i></a>
+                    <a class="btn btn-success btn-sm my-1 mx-1 mx-md-2" href="https://goo.gl/maps/hR95oHnVUdv" target="_blank"><i class="fas fa-map-marker-alt fa-inverse fa-fw fa-2x"></i></a>
+                    <a class="btn btn-info btn-sm my-1 mx-1 mx-md-2" href="tel:+62-061-661-6765" target="_blank"><i class="fas fa-mobile-alt fa-inverse fa-fw fa-2x"></i></a>
+                    <a class="navbarToggler btn btn-dark btn-sm my-1 mx-1 mx-md-2 d-lg-none" href=""  data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars fa-inverse fa-fw fa-2x" aria-hidden="true"></i></a>
+                    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button> -->
+                  </div>
+            
+                  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent p-0">
+                    <!-- <a class="navbar-brand d-none d-md-block notranslate" href="#">Chandra Kumala School</a>
+                    <a class="navbar-brand d-block d-md-none  notranslate" href="#">Chandra Kumala</a> -->
+            
+            
+                  <div class="collapse navbar-collapse zindex" id="navbarToggler">
+                    <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      <div class="nav-item ">
+                        <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our School</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item text-dark" href="{% url 'www:news' %}"><i class="far fa-newspaper"></i> News</a>
+                          <a class="dropdown-item text-dark" href="{% url 'www:programs' %}"><i class="fas fa-graduation-cap fa-fw"></i> Programs</a>
+                          <a class="dropdown-item text-dark" href="{% url 'www:contact' %}"><i class="fas fa-map-signs fa-fw"></i> Map & Contact<span class="sr-only">(current)</span></a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item text-dark" href="{% url 'www:registration' %}"><i class="fas fa-pencil-alt fa-fw"></i> Register</a>
+                          <a class="dropdown-item text-dark" href="{% url 'www:scholarships' %}"><i class="far fa-handshake fa-fw"></i> Scholarships</a>
+                        </div>
+                      </div>
+                      <div class="nav-item">
+                        <a class="nav-link dropdown-toggle " href="{% url 'www:programs' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Groups</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item text-dark" href="{% url 'www:alumni' %}"><i class="far fa-address-card"></i> Alumni</a>
+                          <a class="dropdown-item text-dark" href="{% url 'www:parents' %}"><i class="fas fa-users"></i> Parents</a>
+                          <a class="dropdown-item text-dark disabled" href="#"><i class="fas fa-user-circle"></i> Teachers</a>
+                        </div>
+                      </div>
+                      <div class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="{% url 'www:programs' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item text-dark" href="{% url 'www:news' %}"><i class="far fa-newspaper"></i> News</a>
+                          <!-- <a class="dropdown-item text-dark" href="{% url 'www:gallery' %}"><i class="far fa-image"></i> Pictures</a> -->
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item text-dark no-translate" href="https://www.facebook.com/ChandraKumalaSchool/" target="_blank"><i class="fab fa-facebook fa-fw fa-1x"></i> Facebook</a>
+                          <a class="dropdown-item text-dark no-translate" href="https://www.instagram.com/chandrakumalaofficial/" target="_blank"><i class="fab fa-instagram fa-fw fa-1x"></i>  Pictures</a>
+                          <a class="dropdown-item text-dark no-translate" href="https://www.youtube.com/chandrakumalaschool" target="_blank"><i class="fab fa-youtube fa-fw fa-1x"></i>  Videos</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+            
+                </div>
+            </div>
+            </header>
 
         <main class="container flex-fill">
