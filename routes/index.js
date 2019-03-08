@@ -5,7 +5,7 @@ var text = "Some quick example text to build on the card title and make up the b
 
 
 router.get('/', function(req, res){
-    res.render('landing');
+    res.render('splash');
 });
 
 router.get('/home', function(req, res){
@@ -17,5 +17,9 @@ router.get('/home', function(req, res){
 
     res.render('home', {articles: sections});
 });
+
+router.post('/home', function(req, res){
+    
+})
 
 module.exports = router;
