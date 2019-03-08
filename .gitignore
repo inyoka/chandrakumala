@@ -1,5 +1,6 @@
 # CKS ignores
 *.swp
+public/imgs/unused/
 
 # Logs
 logs
