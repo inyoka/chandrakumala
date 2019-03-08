@@ -10,7 +10,7 @@ router.get('/', function(req, res){
 
 router.get('/home', function(req, res){
     var sections = [
-        {title: "Heading 1", image: "imgs/coloring.png", paragraph: text},
+        {title: "Heading 1", image: "imgs/teach.png", paragraph: text},
         {title: "Heading 2", image: "imgs/apples.png", paragraph: text},
         {title: "Heading 3", image: "imgs/glasses.png", paragraph: text}
     ]
