@@ -19,6 +19,9 @@ header {
     color: white;
   }
   
+  zindex{
+      z-index: 2;
+  }
 
   footer {
     position: relative;
