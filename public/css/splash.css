@@ -40,10 +40,13 @@ main{
     background-blend-mode: lighten;
 }
 
-img {
-    width: 200%;
+.img-top {
+    width: 150px;
   }
 
+.img-middle {
+    width: 30%;
+  }
 i{
     color: white;
 }
