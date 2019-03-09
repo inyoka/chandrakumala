@@ -16,8 +16,8 @@ header, main, footer{
 .logo-shadow-black {
     background-image:
       radial-gradient(
-        #00000000,
-        #00000000,
+        #00000055,
+        #00000055,
         #00000055,
         #00000000,
         #00000000
@@ -48,17 +48,23 @@ main{
     width: 30%;
   }
 
-.slideshow{
-    position: fixed;
-    /* width: 100%;
-    height: 100%; */
-    top: 0;
-    left: 0;
-    /* z-index: 0; */
-    list-style: none;
+.blockquote{
+    font-size: 2em;
 }
 
-.slideshow li{
+  .slideshow { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slideshow li { 
     width: 100%;
     height: 100%;
     position: absolute;
@@ -68,21 +74,28 @@ main{
     background-position: 50% 50%;
     background-repeat: no-repeat;
     opacity: 0;
-    /* z-index: 0; */
-    animation: imageAnimation 30s linear infinite;
-}
-
+    z-index: 0;
+    animation: imageAnimation 50s linear infinite; 
+  }
+  
   .slideshow li:nth-child(1) { 
     background-image: url(../imgs/coloring.png);
-    animation-delay: 0s; 
   }
   .slideshow li:nth-child(2) { 
     background-image: url(../imgs/00475.jpg);
     animation-delay: 10s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(../imgs/00152.jpg);
+    background-image: url(../imgs/unsplash-01.jpg);
     animation-delay: 20s; 
+  }
+  .slideshow li:nth-child(4) { 
+    background-image: url(../imgs/00152.jpg);
+    animation-delay: 30s; 
+  }
+  .slideshow li:nth-child(5) { 
+    background-image: url(../imgs/00288.jpg);
+    animation-delay: 40s; 
   }
   
   @keyframes imageAnimation { 
