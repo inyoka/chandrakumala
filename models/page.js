@@ -10,7 +10,7 @@ var pageSchema = new mongoose.Schema({
      },
      username: String
    },
-   section: [
+   sections: [
       {
          type: mongoose.Schema.Types.ObjectId,
          ref: "Section"
