@@ -7,9 +7,13 @@ header, footer {
     margin: 0;
     padding: 50px 0;
     font: 44px "Arial";
-    color: white;
+    color: black;
   }
   
   zindex{
       z-index: 2;
   }
+
+  .baskerville {
+    font-family: 'Libre Baskerville', serif;
+}
