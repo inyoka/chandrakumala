@@ -29,7 +29,7 @@ router.post('/', middleware.isLoggedIn, function(req, res){
     id: req.user._id,
     username: req.user.username
   }
-  var newPage = {name: name, image: image, description: desc, price: price, author: author}
+  var newPage = {name: name, image: image, description: desc, author: author}
   //  Create new page and save to DB.
   Page.create(newPage, function(err, newlyCreated){
     if(err){
