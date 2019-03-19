@@ -64,4 +64,5 @@ var listener = app.listen(process.env.PORT, process.env.IP, function(){
     var port = listener.address().port;
   
     console.log('ChandraKumala server listening on : ' + address + ':' + port);
+    console.log('Database in use : ' + databaseurl);
   });
