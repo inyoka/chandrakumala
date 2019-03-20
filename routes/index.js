@@ -25,12 +25,12 @@ router.get('/home', function(req, res){
 // AUTH ROUTES
 
 // Register form
-router.get('/register', function(req, res){
+router.get('/register', middleware.isLoggedIn, function(req, res){
     res.render('register');
   });
 
 // Registration
-router.post('/register', function(req, res){
+router.post('/register', middleware.isLoggedIn, function(req, res){
     var newUser = new User({username: req.body.username});
   //   eval(require('locus'))
     User.register(newUser, req.body.password, function(err, user){
