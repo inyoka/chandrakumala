@@ -14,67 +14,83 @@
 		<div class="col-lg-10">
 			<div class="jumbotron">
 				<h1>RESTful Routes</h1>
-				<p>A table of all 7 RESTful routes </p>
+				<p>A table of all 7 RESTful routes improved? </p>
 			</div>
 			<table class="table table-hover table-bordered">
 			<thead>	
 				<tr>
 					<th>Name</th>
+					<th>HTTP</th>
 					<th>Path</th>
-					<th>HTTP Verb</th>
+                    <th>Mongoose Method</th>
+					<th>Path</th>
+                    <th>Mongoose Method</th>
 					<th>Purpose</th>
-					<th>Mongoose Method</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td>Index</td>
-					<td>/dogs</td>
 					<td>GET</td>
-					<td>List all dogs</td>
-					<td>Dog.find()</td>
+					<td>/pages</td>
+                    <td>Page.find()</td>
+					<td>/pages</td>
+                    <td>Page.find()</td>
+					<td>List all pages</td>
 				</tr>
 				<tr class="success">
 					<td>New</td>
-					<td>/dogs/new</td>
 					<td>GET</td>
-					<td>Show new dog form</td>
+					<td>/pages/new</td>
 					<td>N/A</td>
+					<td>/pages/new</td>
+					<td>N/A</td>
+					<td>Show new page form</td>
 				</tr>
 				<tr class="success">
 					<td>Create</td>
-					<td>/dogs</td>
 					<td>POST</td>
-					<td>Create a new dog, then redirect somewhere</td>
-					<td>Dog.create()</td>
+					<td>/pages</td>
+					<td>Page.create()</td>
+					<td>/pages</td>
+					<td>Page.create()</td>
+					<td>Create a new page, then redirect somewhere</td>
 				</tr>
 				<tr class="info">
 					<td>Show</td>
-					<td>/dogs/:id</td>
 					<td>GET</td>
-					<td>Show info about one specific dog</td>
-					<td>Dog.findById()</td>
+					<td>/pages/:id</td>
+					<td>Page.findById()</td>
+					<td>/pages/:slug</td>
+					<td>Page.findOne()</td>
+					<td>Show info about one specific page</td>
 				</tr>
 				<tr class="warning">
 					<td>Edit</td>
-					<td>/dogs/:id/edit</td>
 					<td>GET</td>
-					<td>Show edit form for one dog</td>
-					<td>Dog.findById()</td>
+					<td>/pages/:id/edit</td>
+					<td>Page.findById()</td>
+					<td>/pages/:slug/edit</td>
+					<td>Page.findOne()</td>
+					<td>Show edit form for one page</td>
 				</tr>
 				<tr class="warning">
 					<td>Update</td>
-					<td>/dogs/:id</td>
 					<td>PUT</td>
-					<td>Update particular dog, then redirect somewhere</td>
-					<td>Dog.findByIdAndUpdate()</td>
+					<td>/pages/:id</td>
+					<td>Page.findByIdAndUpdate()</td>
+					<td>/pages/:slug</td>
+					<td>Page.findOneAndUpdate()</td>
+					<td>Update particular page, then redirect somewhere</td>
 				</tr>
 				<tr class="danger">
 					<td>Destroy</td>
-					<td>/dogs/:id</td>
 					<td>DELETE</td>
-					<td>Delete a particular dog, then redirect somewhere</td>
-					<td>Dog.findByIdAndRemove()</td>
+					<td>/pages/:id</td>
+					<td>Page.findByIdAndRemove()</td>
+					<td>/pages/:slug</td>
+					<td>Page.findOneAndRemove()</td>
+					<td>Delete a particular page, then redirect somewhere</td>
 				</tr>
 			</tbody>
 		</table>
