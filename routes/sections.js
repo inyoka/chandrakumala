@@ -46,7 +46,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 });
 
 // Sections Edit Route
-router.get("/:section_id/edit", middleware.checkSectionOwnership, function(req, res){
+router.get("/:section_id/edit", middleware.isLoggedIn, function(req, res){
   Section.findById(req.params.section_id, function(err, foundSection){
     if (err) {
       res.redirect("back");
@@ -57,7 +57,7 @@ router.get("/:section_id/edit", middleware.checkSectionOwnership, function(req, 
 });
 
 // Sections Update Route
-router.put("/:section_id", middleware.checkSectionOwnership, function(req,res){
+router.put("/:section_id", middleware.isLoggedIn, function(req,res){
   Section.findByIdAndUpdate(req.params.section_id, req.body.section, function(err, updatedSection){
     if (err) {
       res.redirect("back");
@@ -68,7 +68,7 @@ router.put("/:section_id", middleware.checkSectionOwnership, function(req,res){
 });
 
 // Sections Destroy Route
-router.delete("/:section_id", middleware.checkSectionOwnership, function(req, res){
+router.delete("/:section_id", middleware.isLoggedIn, function(req, res){
   Section.findByIdAndRemove(req.params.section_id, function(err){
     if (err) {
       res.redirect("back");
