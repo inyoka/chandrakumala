@@ -1,70 +1,49 @@
 var express = require("express");
 var router = express.Router();
-var passport = require("passport");
-var User = require("../models/user");
+var Slide = require("../models/slide");
 var middleware = require("../middleware");
 
-
-var text = "Some quick example text to build on the card title and make up the bulk of the card's content."
-
-
+    
+// INDEX - Displays list of all pages.
 router.get('/', function(req, res){
-    res.render('splash');
+    res.render('index');
 });
 
-router.get('/home', function(req, res){
-    var sections = [
-        {title: "Heading 1", image: "imgs/teach.png", paragraph: text},
-        {title: "Heading 2", image: "imgs/apples.png", paragraph: text},
-        {title: "Heading 3", image: "imgs/glasses.png", paragraph: text}
-    ]
+// SLIDES INDEX - Displays list of all pages.
+router.get('/slides', function(req, res){
+    var first = "/imgs/coloring.png",
+        second = "/imgs/teach.png",
+        third = "/imgs/apples.png"
 
-    res.render('home', {articles: sections});
-});
-
-// AUTH ROUTES
-
-// Register form
-router.get('/register', middleware.isLoggedIn, function(req, res){
-    res.render('register');
-  });
-
-// Registration
-router.post('/register', middleware.isLoggedIn, function(req, res){
-    var newUser = new User({username: req.body.username});
-  //   eval(require('locus'))
-    User.register(newUser, req.body.password, function(err, user){
-        if(err){
-          req.flash("error", err.message);
-          return res.redirect("/register");
+    Slide.find(function(err, slides){
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('slides/index', {first, second, third});
         }
-        passport.authenticate("local")(req, res, function(){
-          req.flash("success", "Welcome to Chandra Kumala School " + user.username);
-          res.redirect("/pages");
-        });
     });
-  });
-  
-  // Login form
-  router.get('/login', function(req, res){
-    res.render('login');
-  });
-  
-  // Login
-  router.post('/login', passport.authenticate("local",
-   {
-     successRedirect: "/pages",
-     failureRedirect: "/login"
-   }), function(req, res){
-  });
-  
-  
-  // Logout Route
-  router.get('/logout', middleware.isLoggedIn, function (req, res){
-    req.logout();
-    req.flash("success", "Logged you out!!");
-    res.redirect('/pages');
-  });
+});
 
+// EDIT slide route. (form)
+router.get("/slides/edit", middleware.isLoggedIn, function(req, res){
+    Slide.find({}, function(err, slides){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("slides/edit", {slides:slides});    
+        }
+    });
+});
+
+// UPDATE slide route. (submit address)
+router.put("/", middleware.isLoggedIn, function(req, res){
+    Slide.findOneAndUpdate({}, req.body.slide, function(err, slides){
+        if(err){
+            res.redirect("/slides");
+        } else {
+            res.redirect("/slides/", {slides:slides});
+        }
+    });
+});
 
 module.exports = router;
