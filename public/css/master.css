@@ -3,17 +3,32 @@ header, footer {
     background-color: #202565;
   }
   
-  h1 {
+h1 {
     margin: 0;
     padding: 50px 0;
     font: 44px "Arial";
     color: black;
   }
   
-  zindex{
+zindex{
       z-index: 2;
   }
 
-  .baskerville {
+.baskerville {
     font-family: 'Libre Baskerville', serif;
+}
+
+.text-shadow{
+        text-shadow: 2px 1px black;
+}
+
+.carousel-inner > .item {
+    height: 400px;
+ }
+
+footer {
+    width: 100%;
+    height: 10%;
+    /* position: fixed;
+    bottom: 0; */
 }
