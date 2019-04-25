@@ -1,26 +1,22 @@
 var express = require("express");
 var app = express(),
+    time = new Date().toLocaleTimeString(),
     bodyParser = require('body-parser'),
     mongoose = require("mongoose"),
     flash = require("connect-flash"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
-    Page = require("./models/page"),
-    Section = require("./models/section"),
+    Slide = require("./models/slide"),
     User = require("./models/user");
-
-require('dotenv').config();
 
 let dateandtime = require('./library/date-and-time');
 date = dateandtime.format(new Date(), 'dddd, DD MMMM YYYY');
 
-//requiring routes
-var sectionRoutes = require("./routes/sections"),
-    pageRoutes = require("./routes/pages"),
-    indexRoutes = require("./routes/index")
+require('dotenv').config();
 
-var databaseurl = process.env.DATABASEURL || 'mongodb://localhost/chandrakumala_01';
+// var databaseurl = process.env.DATABASEURL || 'mongodb://localhost/chandrakumala_01';
+var databaseurl = 'mongodb://localhost/chandrakumala_01';
 mongoose.connect(databaseurl, { useNewUrlParser: true });
 
 // Stops deprecation warning about collection.findAndModify
@@ -34,6 +30,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride("_method"));
 app.use(flash());
 app.set('view engine', 'ejs');
+
+// var seedDB = require("./seeds");
+// seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -49,15 +48,21 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next){
+    res.locals.date = date;
     res.locals.currentUser = req.user;
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
     next();
 });
 
+//requiring routes
+var authRoutes = require("./routes/auth"),
+    blogRoutes = require("./routes/blog"),
+    indexRoutes = require("./routes/index")
+    
 app.use("/", indexRoutes);
-app.use("/pages", pageRoutes);
-app.use("/sections/:id/sections", sectionRoutes);
+app.use("/auth", authRoutes);
+app.use("/blog", blogRoutes);
 
 // Use Environmental variables to determine PORT and IP to liston on...
 
