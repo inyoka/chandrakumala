@@ -12,6 +12,8 @@ var app = express(),
 
 require('dotenv').config();
 
+let dateandtime = require('./library/date-and-time');
+date = dateandtime.format(new Date(), 'dddd, DD MMMM YYYY');
 
 //requiring routes
 var sectionRoutes = require("./routes/sections"),
@@ -65,4 +67,5 @@ var listener = app.listen(process.env.PORT, process.env.IP, function(){
   
     console.log('ChandraKumala server listening on : ' + address + ':' + port);
     console.log('Database in use : ' + databaseurl);
+    console.log('Date : ' + date);
   });
