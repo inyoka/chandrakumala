@@ -1,17 +1,19 @@
 <% include ../partials/header %>
 
-<% slides.forEach(function(slide){ %>
-<section class="flex-new-camp">
-  <form class="btn-toolbar" action="/home/<%= slide._id %>/?_method=PUT" method="post">
-    <h1 class="text-center w-100">Edit <%= slide.title %></h1>
-    <input class="form-control my-2" type="text" name='slide[image]' value="<%= slide.image %>">
-    <input class="form-control my-2 mt-4" type="text" name='slide[title]' value="<%= slide.title %>">
-    <textarea class="form-control my-2" type="textarea" name="slide[paragraph]" rows="3"><%= slide.paragraph %></textarea>
-    <button class="btn btn-lg btn-primary btn-block my-2">Update</button>
-    <a href="/slides">Go Back</a>
-  </form>
+<section>
+    <% slides{ %>
+        <form class="btn-toolbar" action="/slides/?_method=PUT" method="post">
+            <h1 class="text-center w-100">Edit Slide Images</h1>
+            <input class="form-control my-2" type="text" name='slide[imageOne]' value="<%= slide.image %>">
+            <input class="form-control my-2" type="text" name='slide[imageTwo]' value="<%= slide.image %>">
+            <input class="form-control my-2" type="text" name='slide[imageThree]' value="<%= slide.image %>">
+            <button class="btn btn-lg btn-primary btn-block my-2">Update</button>
+            <a class="btn" href="/slides">Go Back</a>
+        </form>
+    <% }) %>
+
 </section>
-<% }) %>
+
 
 
 <% include ../partials/footer %>
